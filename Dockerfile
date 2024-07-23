@@ -1,6 +1,6 @@
 FROM python:3.10-slim
 
-WORKDIR usr/src/index
+WORKDIR .
 
 COPY requirements.txt .
 
@@ -10,6 +10,6 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 COPY . .
 
-EXPOSE 3030
+EXPOSE 8080
 
-CMD ["gunicorn", "--bind", "172.31.11.252:3030", "run:app"]
+CMD ["fastapi", "run", "main.py"]
