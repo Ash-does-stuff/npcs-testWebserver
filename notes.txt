@@ -4,9 +4,11 @@ build:
 . - location of the Dockerfile
 
 run:
-(sudo) docker run -p 80:80 npcs-testserver & 
+(sudo) docker run -d -p 80:80 npcs-testserver
+-d - detaches the process (runs it in the bg)
 -p - the port to which the application should bind
-& runs it in the background
+
+IF USING &
 THEN
 bg - puts the process into the background
 jobs - lists all running processes
