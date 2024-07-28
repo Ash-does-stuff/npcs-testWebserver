@@ -19,12 +19,12 @@ jobs:
           ssh -o StrictHostKeyChecking=no -i private_key ${USER_NAME}@${HOSTNAME} '
 
               # Now we have got the access of EC2 and we will start the deploy .
-              cd /home/ubuntu/npcs-testWebserver #&&
-              git checkout main #&&
-              git fetch --all #&&
-              git reset --hard origin/main #&&
-              git pull origin main #&&
-              sudo docker kill $(sudo docker ps -q) #&&
-              sudo docker run -p 80:80 npcs-testserver
-              exit 1
+              cd /home/ubuntu/npcs-testWebserver &&
+              git checkout main &&
+              git fetch --all &&
+              git reset --hard origin/main &&
+              git pull origin main &&
+              sudo docker kill $(sudo docker ps -q) &&
+              sudo docker run -d -p 80:80 npcs-testserver
+              echo Deployment succesful
               '
