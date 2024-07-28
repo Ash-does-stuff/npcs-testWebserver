@@ -1,0 +1,8 @@
+build:
+(sudo) docker build -t npcs-testserver .
+-t - tag
+. - location of the Dockerfile
+
+run:
+(sudo) docker run -p 80:80 npcs-testserver
+-p - the port to which the application should bind
