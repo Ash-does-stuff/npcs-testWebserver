@@ -1,0 +1,9 @@
+name: deploy
+on: [push]
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: ssh ubuntu@ec2-3-76-10-149.eu-central-1.compute.amazonaws.com
+  
