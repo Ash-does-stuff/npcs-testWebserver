@@ -25,7 +25,5 @@ jobs:
               git reset --hard origin/main &&
               git pull origin main &&
               sudo docker kill $(sudo docker ps -q) &&
-              sudo docker run -p 80:80 npcs-testserver &
-              bg &&
-              echo Deployment succesful
+              sudo docker run -p 80:80 npcs-testserver
               '
