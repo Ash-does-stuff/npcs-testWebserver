@@ -4,7 +4,27 @@ build:
 . - location of the Dockerfile
 
 run:
-(sudo) docker run -p 80:80 npcs-testserver
+(sudo) docker run -p 80:80 npcs-testserver & 
 -p - the port to which the application should bind
+& runs it in the background
+THEN
+bg - puts the process into the background
+jobs - lists all running processes
+fg (processid) - bring the process into the foreground, then you can just kill it with ctrl+c
+
+
+
+DOCKER COMMANDS :):
+https://codenotary.com/blog/extremely-useful-docker-commands
+
+kill all running containers:
+sudo docker kill $(sudo docker ps -q) 
+
+delete all stopped containers:
+sudo docker rm $(sudo docker ps -a -q) 
+
+delete all images:
+sudo docker rmi $(sudo docker images -q)
+
 
 a
